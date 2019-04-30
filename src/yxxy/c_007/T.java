@@ -10,7 +10,7 @@ public class T {
 	public synchronized void m1() { 
 		System.out.println(Thread.currentThread().getName() + " m1 start...");
 		try {
-			Thread.sleep(10000);
+			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -19,7 +19,7 @@ public class T {
 	
 	public void m2() {
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(500);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

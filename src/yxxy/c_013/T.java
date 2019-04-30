@@ -11,7 +11,14 @@ import java.util.List;
 public class T {
 	volatile int count = 0; 
 	void m() {
-		for(int i=0; i<10000; i++) count++;
+		//System.out.println(Thread.currentThread().getName()+"--在执行");
+		for(int i=0; i<10; i++) {
+			System.out.println(Thread.currentThread().getName()+"--在执行"+count);
+			synchronized(this) {
+				count++;
+			}
+			
+		}
 	}
 	
 	public static void main(String[] args) {
@@ -32,7 +39,7 @@ public class T {
 				e.printStackTrace();
 			}
 		});
-		
+		System.out.println(Thread.currentThread().getName()+"--在执行");
 		System.out.println(t.count);
 		
 		
